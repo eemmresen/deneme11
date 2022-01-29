@@ -32,7 +32,6 @@ namespace deneme11
             }
             //Bu db bağlantısı ado net ile yapılmıştır
           //Deneme yaptım
-          //deneme2
         }
     }
 

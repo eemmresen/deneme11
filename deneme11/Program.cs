@@ -22,9 +22,7 @@ namespace deneme11
             SqlCommand cmd = new SqlCommand("select * from Category", new SqlConnection(@"Data Source=.;Initial Catalog=VatanComputerDB;User ID=emresen;Password=1234;"));
             cmd.Connection.Open();
             SqlDataReader reader = cmd.ExecuteReader();
-            //yoprtjımkl
-
-            Console.WriteLine(  "ahmet");
+           
             //reader.Fill(table);
 
 
@@ -67,7 +65,7 @@ namespace deneme11
             SqlConnection conn = new SqlConnection(@"Data Source=.;Initial Catalog=VatanComputerDB;User ID=emresen;Password=1234;");
             SqlCommand command = new SqlCommand("select * from Category", conn);
             conn.Open();
-            List<string> data = command.ExecuteReader().HasRows();
+            //List<string> data = command.ExecuteReader().HasRows();
            
             conn.Close();
 

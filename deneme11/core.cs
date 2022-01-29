@@ -8,19 +8,19 @@ namespace deneme11
 {
     class core
     {
-      //public void coretry()
-      //  {
-      //      string connection = @"Data Source=.;Initial Catalog=VatanComputerDB;User ID=emresen;Password=1234;";
-      //      string sql = "Select * From Inventory";
-      //      SqlCommand myCommand = new SqlCommand(sql, connection);
-            
-      //      //opening connection and executing the query
-      //      connection.open;
-      //      command.ExecuteNonQuery();
-      //      connection.Close();
-      //  }
+        //public void coretry()
+        //  {
+        //      string connection = @"Data Source=.;Initial Catalog=VatanComputerDB;User ID=emresen;Password=1234;";
+        //      string sql = "Select * From Inventory";
+        //      SqlCommand myCommand = new SqlCommand(sql, connection);
 
-        public  DataTable ExecuteDataTableSqlDA()
+        //      //opening connection and executing the query
+        //      connection.open;
+        //      command.ExecuteNonQuery();
+        //      connection.Close();
+        //  }
+
+        public DataTable ExecuteDataTableSqlDA()
         {
             using (var connection = new SqlConnection(@"Data Source=.;Initial Catalog=VatanComputerDB;User ID=emresen;Password=1234;"))
             {
@@ -30,9 +30,8 @@ namespace deneme11
                 da.Fill(dt);
                 return dt;
             }
-            //Bu db bağlantısı ado net ile yapılmıştır
-          //version ahmet
         }
+
     }
 
 

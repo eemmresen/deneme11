@@ -30,7 +30,7 @@ namespace deneme11
                 da.Fill(dt);
                 return dt;
             }
-            //Bu db bağlantısı ado net ile yapılmıştır
+            Console.WriteLine("");
           
         }
     }

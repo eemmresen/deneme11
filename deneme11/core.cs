@@ -31,7 +31,7 @@ namespace deneme11
                 return dt;
             }
             //Bu db bağlantısı ado net ile yapılmıştır
-          
+          //version ahmet
         }
     }
 

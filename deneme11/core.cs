@@ -6,7 +6,7 @@ using System.Text;
 
 namespace deneme11
 {
-    class core
+    class core:Home,IHesap   
     {
         //public void coretry()
         //  {
@@ -19,7 +19,7 @@ namespace deneme11
         //      command.ExecuteNonQuery();
         //      connection.Close();
         //  }
-
+        public int ali {get; set; }
         public DataTable ExecuteDataTableSqlDA()
         {
             using (var connection = new SqlConnection(@"Data Source=.;Initial Catalog=VatanComputerDB;User ID=emresen;Password=1234;"))
@@ -32,6 +32,10 @@ namespace deneme11
             }
         }
 
+        public void metotlar()
+        {
+            Console.WriteLine("metotlar");
+        }
     }
 
 

@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Data;
 using System.Data.SqlClient;
+using System.Text;
 
 namespace deneme11
 {
@@ -11,22 +12,39 @@ namespace deneme11
     
         static void Main(string[] args)
         {
-
-            deneme1 d = new deneme1();
-           DataTable Category= d.GetData("select * from Category");
-             Console.WriteLine("----------------------------");
-           DataTable Product = d.GetData("select * from Product");
-
-
-            foreach (DataRow dtRow in Category.Rows)
+            string a ;
+            using (SqlCommand cmd = new SqlCommand("select max(id) from Category", new SqlConnection(@"Data Source=.;Initial Catalog=VatanComputerDB;User ID=emresen;Password=1234;")))
             {
-                // On all tables' columns
-                foreach (DataColumn dc in Category.Columns)
-                {
-                    var field1 = dtRow[dc].ToString();
-                    Console.WriteLine(dc.ColumnName + "-->" + field1);
-                }
+              
+                cmd.Connection.Open();
+
+             var c = cmd.ExecuteScalar();
+                a = c.ToString();
+               
+                cmd.Connection.Close();
             }
+            Console.WriteLine(a);
+
+
+           // StringBuilder sbAmout = new StringBuilder();
+           // sbAmout.AppendFormat("INSERT INTO Category(Name,Description) VALUES('{0}','{1}')", "emre", "sen");
+           // Console.WriteLine(sbAmout);
+
+           // deneme1 d = new deneme1();
+           // d.AddData("INSERT INTO Category(Name,Description) VALUES('T-shirt 3','aaa')");
+           //  Console.WriteLine("----------------------------");
+           //DataTable Product = d.GetData("select * from Product");
+
+
+           // foreach (DataRow dtRow in Product.Rows)
+           // {
+           //     // On all tables' columns
+           //     foreach (DataColumn dc in Product.Columns)
+           //     {
+           //         var field1 = dtRow[dc].ToString();
+           //         Console.WriteLine(dc.ColumnName + "-->" + field1);
+           //     }
+           // }
 
             //core d = new core();
             //IHesap h = new core();

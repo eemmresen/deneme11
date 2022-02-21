@@ -28,6 +28,19 @@ namespace deneme11
             return dataTable;
 
         }
+
+        public void AddData(string query)
+        {
+
+            using (SqlCommand cmd = new SqlCommand(query, new SqlConnection(@"Data Source=.;Initial Catalog=VatanComputerDB;User ID=emresen;Password=1234;")))
+            {
+                cmd.Connection.Open();
+
+                cmd.ExecuteNonQuery();
+
+                cmd.Connection.Close();
+            }
+        }
     }
 
    
